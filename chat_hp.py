@@ -14,7 +14,7 @@ except:
     st.stop()
 
 # Inisialisasi Model
-model = genai.GenerativeModel('gemini-2.0-pro')
+model = genai.GenerativeModel('gemini-1.5-pro')
 
 # Inisialisasi Chat
 if "messages" not in st.session_state:
@@ -44,4 +44,5 @@ if prompt := st.chat_input("Tanya sesuatu..."):
             st.session_state.messages.append({"role": "assistant", "content": response.text})
         except Exception as e:
             message_placeholder.error(f"Error: {e}")
+
 
